@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Note AI — User Guide</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f4f6fb;
+      color: #2d3748;
+      line-height: 1.6;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+
+    .header .app-icon {
+      font-size: 52px;
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .header h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+
+    .header p {
+      font-size: 1.05rem;
+      color: #94a3b8;
+      max-width: 480px;
+      margin: 0 auto 20px;
+    }
+
+    .header a.app-link {
+      display: inline-block;
+      background: #3b82f6;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+      transition: background 0.2s;
+    }
+
+    .header a.app-link:hover {
+      background: #2563eb;
+    }
+
+    /* ── Main container ── */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+
+    /* ── Section heading ── */
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+
+    .section-subtitle {
+      font-size: 0.95rem;
+      color: #64748b;
+      margin-bottom: 28px;
+    }
+
+    .divider {
+      border: none;
+      border-top: 2px solid #e2e8f0;
+      margin: 44px 0;
+    }
+
+    /* ── Steps ── */
+    .steps-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 20px 22px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
+    }
+
+    .step-number {
+      flex-shrink: 0;
+      width: 42px;
+      height: 42px;
+      background: #0f172a;
+      color: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      font-weight: 800;
+    }
+
+    .step-body {
+      padding-top: 2px;
+    }
+
+    .step-body strong {
+      display: block;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+
+    .step-body span {
+      font-size: 0.92rem;
+      color: #475569;
+    }
+
+    .step-body a {
+      color: #3b82f6;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .step-body a:hover {
+      text-decoration: underline;
+    }
+
+    .step-tag {
+      display: inline-block;
+      background: #f1f5f9;
+      color: #475569;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: 20px;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+
+    /* ── Feature cards grid ── */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      border-radius: 18px;
+      padding: 24px 22px 22px;
+      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.07);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .card .card-icon {
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    .card .card-name {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-top: 4px;
+    }
+
+    .card .card-desc {
+      font-size: 0.88rem;
+      color: #475569;
+      line-height: 1.5;
+    }
+
+    .card .card-example {
+      margin-top: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #1e40af;
+      background: rgba(255,255,255,0.6);
+      border-left: 3px solid currentColor;
+      padding: 6px 10px;
+      border-radius: 0 8px 8px 0;
+    }
+
+    /* Pastel card colors */
+    .card-blue   { background: #eff6ff; }
+    .card-purple { background: #f5f3ff; }
+    .card-green  { background: #f0fdf4; }
+    .card-yellow { background: #fffbeb; }
+    .card-pink   { background: #fdf2f8; }
+    .card-teal   { background: #f0fdfa; }
+    .card-indigo { background: #eef2ff; }
+    .card-sky    { background: #f0f9ff; }
+
+    /* ── Footer ── */
+    .footer {
+      text-align: center;
+      padding: 24px 20px 40px;
+      font-size: 0.85rem;
+      color: #94a3b8;
+    }
+
+    .footer a {
+      color: #3b82f6;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .header h1 {
+        font-size: 1.7rem;
+      }
+
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .step-number {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── HEADER ── -->
+  <header class="header">
+    <span class="app-icon">🗒️</span>
+    <h1>Note AI — User Guide</h1>
+    <p>Everything you need to know to get started, in plain simple language.</p>
+    <a class="app-link" href="https://note-ai-ten.vercel.app" target="_blank">Open the App ↗</a>
+  </header>
+
+  <div class="container">
+
+    <!-- ── SECTION 1: How to Open & Use the App ── -->
+    <h2 class="section-title">How to Open &amp; Use the App</h2>
+    <p class="section-subtitle">Follow these steps in order — it only takes a minute.</p>
+
+    <div class="steps-list">
+
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-body">
+          <strong>Open your browser</strong>
+          <span>Use <b>Google Chrome</b> or <b>Microsoft Edge</b> for the best experience. Both are free to download.</span>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-body">
+          <strong>Go to the app</strong>
+          <span>In the address bar at the top of your browser, type or paste:
+            <br /><a href="https://note-ai-ten.vercel.app" target="_blank">https://note-ai-ten.vercel.app</a>
+            &nbsp;then press <b>Enter</b>.
+          </span>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-body">
+          <strong>Create your first note</strong>
+          <span>Click the big <b>"+"</b> button on the screen. A form will open — type a title, write your note, pick a category, and hit <b>Save</b>. That's it!</span>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">4</div>
+        <div class="step-body">
+          <strong>Enable notifications <span style="font-size:1rem;">🔔</span></strong>
+          <span>Click the <b>bell icon</b> (🔔) at the top of the app, then click <b>Allow</b> when your browser asks. This lets the app send you reminder alerts.</span>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">5</div>
+        <div class="step-body">
+          <strong>Add your Gemini API key <span class="step-tag">Optional</span></strong>
+          <span>To use the <b>Ask AI</b> feature, you need a free Gemini API key. Go to <b>Settings</b> inside the app and paste your key there. The app will remember it.</span>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="divider" />
+
+    <!-- ── SECTION 2: What Can You Do ── -->
+    <h2 class="section-title">What Can You Do in This App</h2>
+    <p class="section-subtitle">Eight powerful features — all in one place, easy to use.</p>
+
+    <div class="cards-grid">
+
+      <div class="card card-blue">
+        <span class="card-icon">📝</span>
+        <div class="card-name">Create Notes</div>
+        <div class="card-desc">Write any note with a title, content, category, and date. Keep everything neatly organized.</div>
+        <div class="card-example">Example: "Shopping list — Groceries — March 2026"</div>
+      </div>
+
+      <div class="card card-purple">
+        <span class="card-icon">🎤</span>
+        <div class="card-name">Voice Notes</div>
+        <div class="card-desc">Speak out loud and watch your words appear as text in real time. No typing needed.</div>
+        <div class="card-example">Example: Dictate a meeting summary hands-free</div>
+      </div>
+
+      <div class="card card-green">
+        <span class="card-icon">📎</span>
+        <div class="card-name">Upload Documents</div>
+        <div class="card-desc">Attach a PDF, Word file, or photo — the app reads the text inside automatically using OCR.</div>
+        <div class="card-example">Example: Upload a scanned receipt and get the text extracted</div>
+      </div>
+
+      <div class="card card-yellow">
+        <span class="card-icon">⏰</span>
+        <div class="card-name">Reminders &amp; Notifications</div>
+        <div class="card-desc">Set a date and time on any note. Your browser will pop up an alert so you never forget.</div>
+        <div class="card-example">Example: "Take medicine — every day at 8:00 AM"</div>
+      </div>
+
+      <div class="card card-pink">
+        <span class="card-icon">🔍</span>
+        <div class="card-name">Search &amp; Filter</div>
+        <div class="card-desc">Type any word to instantly find matching notes. Filter by category to narrow things down.</div>
+        <div class="card-example">Example: Search "invoice" to find all billing notes</div>
+      </div>
+
+      <div class="card card-teal">
+        <span class="card-icon">💰</span>
+        <div class="card-name">Finance Tracker</div>
+        <div class="card-desc">Log your income and expenses, upload receipts, and view charts to see where your money goes.</div>
+        <div class="card-example">Example: Track monthly spending with a visual chart</div>
+      </div>
+
+      <div class="card card-indigo">
+        <span class="card-icon">✨</span>
+        <div class="card-name">Ask AI</div>
+        <div class="card-desc">Ask any question about your notes and Gemini AI will answer — like having a smart assistant.</div>
+        <div class="card-example">Example: "Summarize all my work notes from this week"</div>
+      </div>
+
+      <div class="card card-sky">
+        <span class="card-icon">☁️</span>
+        <div class="card-name">Cloud Sync</div>
+        <div class="card-desc">Your notes save automatically and sync across all your devices. Nothing is ever lost.</div>
+        <div class="card-example">Example: Write a note on your phone, read it on your laptop</div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <p>Need help? Visit the app at <a href="https://note-ai-ten.vercel.app" target="_blank">note-ai-ten.vercel.app</a></p>
+    <p style="margin-top:6px;">Note AI &mdash; Your smart, simple notepad.</p>
+  </footer>
+
+</body>
+</html>
