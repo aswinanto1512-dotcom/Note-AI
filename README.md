@@ -5,14 +5,14 @@
 **A smart, AI-powered note-taking app with voice recording, document OCR, finance tracking, and reminders.**
 
 [![CI/CD Pipeline](https://github.com/aswinanto1512-dotcom/Note-AI/actions/workflows/ci.yml/badge.svg)](https://github.com/aswinanto1512-dotcom/Note-AI/actions/workflows/ci.yml)
-[![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?logo=vercel)](https://note-ai.vercel.app)
+[![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?logo=vercel)](https://note-ai-ten.vercel.app)
 [![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white)](https://react.dev)
 [![Vite](https://img.shields.io/badge/Vite-5-646CFF?logo=vite&logoColor=white)](https://vitejs.dev)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-38BDF8?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 [![Supabase](https://img.shields.io/badge/Supabase-Backend-3ECF8E?logo=supabase&logoColor=white)](https://supabase.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-[Live Demo](https://note-ai.vercel.app) · [Report Bug](https://github.com/aswinanto1512-dotcom/Note-AI/issues) · [Request Feature](https://github.com/aswinanto1512-dotcom/Note-AI/issues)
+[Live Demo](https://note-ai-ten.vercel.app) · [Report Bug](https://github.com/aswinanto1512-dotcom/Note-AI/issues) · [Request Feature](https://github.com/aswinanto1512-dotcom/Note-AI/issues)
 
 </div>
 
