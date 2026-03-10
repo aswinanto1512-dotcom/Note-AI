@@ -201,7 +201,8 @@ export default function AskAIModal({ onClose, apiKey, onSaveApiKey, notes, darkM
   }
 
   const handleSaveKey = () => {
-    _cachedModel = null // reset so new key re-detects model
+    _cachedModel = null
+    _failedModels.clear() // clear failed models so new key gets a fresh start
     onSaveApiKey(tempKey.trim())
     setShowApiKeyInput(false)
   }
